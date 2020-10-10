@@ -1,47 +1,64 @@
 import BobStyleStr from "./css.js";
 
-let n = 1;
+const player = {
+  id: undefined,
+  time: 100,
+  ui: {
+    style: document.querySelector("#style"),
+    BobStyle: document.querySelector("#BobStyle"),
+  },
+  events: {
+    "#btnPause": "pause",
+    "#btnPlay": "play",
+    "#btnFast": "fast",
+    "#btnNormal": "normal",
+    "#btnWave": "wave",
+    "#btnWink": "wink",
+  },
+  n: 1,
+  init: () => {
+    player.ui.style.innerText = BobStyleStr.style.substr(0, player.n);
+    player.ui.BobStyle.innerHTML = BobStyleStr.style.substr(0, player.n);
+    player.bindEvents();
+    player.play();
+  },
+  bindEvents: () => {
+    for (let key in player.events) {
+      if (player.events.hasOwnProperty(key)) {
+        document.querySelector(key).onclick = player[player.events[key]];
+      }
+    }
+  },
+  run: () => {
+    player.n += 1;
+    if (player.n > BobStyleStr.style.length) {
+      window.clearInterval(player.id);
+      return;
+    }
 
-style.innerText = BobStyleStr.style.substr(0, n);
-BobStyle.innerHTML = BobStyleStr.style.substr(0, n);
-
-let time = 100;
-
-const run = () => {
-  n += 1;
-  console.log(n);
-  if (n > BobStyleStr.style.length) {
-    window.clearInterval(id);
-    return;
-  }
-  style.innerText = BobStyleStr.style.substr(0, n);
-  style.scrollTop = style.scrollHeight;
-  BobStyle.innerHTML = BobStyleStr.style.substr(0, n);
+    player.ui.style.innerText = BobStyleStr.style.substr(0, player.n);
+    player.ui.style.scrollTop = player.ui.style.scrollHeight;
+    player.ui.BobStyle.innerHTML = BobStyleStr.style.substr(0, player.n);
+  },
+  play: () => {
+    player.pause();
+    player.id = setInterval(player.run, player.time);
+  },
+  pause: () => {
+    window.clearInterval(player.id);
+  },
+  fast: () => {
+    player.pause();
+    player.time = 10;
+    player.play();
+  },
+  normal: () => {
+    player.pause();
+    player.time = 100;
+    player.play();
+  },
+  wave: () => {},
+  wink: () => {},
 };
 
-let id = setInterval(() => {
-  run();
-}, time);
-
-btnPause.onclick = () => {
-  window.clearInterval(id);
-};
-btnPlay.onclick = () => {
-  id = setInterval(() => {
-    run();
-  }, time);
-};
-btnFast.onclick = () => {
-  window.clearInterval(id);
-  time = 10;
-  id = setInterval(() => {
-    run();
-  }, time);
-};
-btnNormal.onclick = () => {
-  window.clearInterval(id);
-  time = 100;
-  id = setInterval(() => {
-    run();
-  }, time);
-};
+player.init();
