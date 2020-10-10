@@ -1,18 +1,5 @@
 const BobStyleStr = {
   style: `
-  /* 郑晓鑫是SB */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-*::before,
-*::after {
-  display: block;
-  content: "";
-  box-sizing: border-box;
-}
-
 body {
   background-color: #fddb21;
 }

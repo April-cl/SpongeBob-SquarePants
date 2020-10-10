@@ -125,7 +125,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var BobStyleStr = {
-  style: "\n  /* \u90D1\u6653\u946B\u662FSB */\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n*::before,\n*::after {\n  display: block;\n  content: \"\";\n  box-sizing: border-box;\n}\n\nbody {\n  background-color: #fddb21;\n}\n\n.BobContainer,\n.eyeContainer,\n.noseContainer,\n.mouthContainer,\n.faceContainer,\n.chinContainer {\n  position: relative;\n}\n\n/* \u5934\u90E8 */\n.BobHead {\n}\n\n/* \u773C\u775B\u90E8\u5206 */\n\n.eyeContainer {\n  top: 60px;\n  left: 50%;\n}\n\n.eye {\n  width: 200px;\n  height: 200px;\n  border: 5px solid #000;\n  background-color: #fff;\n  border-radius: 50%;\n  position: absolute;\n}\n\n.eyeLeft {\n  margin-left: -200px;\n}\n\n.eye::before,\n.eye::after {\n  border-radius: 50%;\n  position: relative;\n}\n\n.eye::before {\n  width: 60px;\n  height: 60px;\n  border: 5px solid #000;\n  background-color: #09f;\n  top: 60px;\n  left: 60px;\n}\n\n.eye::after {\n  width: 20px;\n  height: 20px;\n  border: 5px solid #000;\n  background-color: #000;\n  top: 20px;\n  left: 80px;\n}\n\n/* \u776B\u6BDB */\n.eyeBrow,\n.eyeBrow::before,\n.eyeBrow::after {\n  width: 16px;\n  height: 60px;\n  background-color: #000;\n  position: absolute;\n}\n\n.eyeBrow {\n  top: -60px;\n  left: 80px;\n}\n\n.eyeBrow::before {\n  transform: rotate(-45deg);\n  top: 30px;\n  left: -80px;\n}\n\n.eyeBrow::after {\n  transform: rotate(40deg);\n  top: 18px;\n  left: 72px;\n}\n\n/* \u9F3B\u5B50\u90E8\u5206 */\n.noseContainer {\n  top: 180px;\n  left: 50%;\n  z-index: 9999;\n}\n\n.nose {\n  width: 120px;\n  height: 160px;\n  border: 5px solid transparent;\n  border-color: #000 #000 transparent #000;\n  background-color: #fddb21;\n  margin-left: -60px;\n  border-radius: 70%;\n}\n\n/* \u5634\u5DF4\u90E8\u5206 */\n\n.mouthContainer {\n  top: 90px;\n  left: 50%;\n  margin-left: -220px;\n  z-index: 9998;\n}\n\n/* \u5634\u5507 */\n\n.lip {\n  width: 440px;\n  height: 280px;\n  border: 5px solid transparent;\n  border-bottom: 5px solid #000;\n  border-radius: 100%;\n  position: absolute;\n  top: -180px;\n}\n\n.lip::before,\n.lip::after {\n  width: 30px;\n  height: 20px;\n  border: 5px solid transparent;\n  border-bottom: 5px solid #000;\n  position: absolute;\n  top: 220px;\n}\n\n.lip::before {\n  transform: rotate(-135deg);\n  right: 36px;\n}\n\n.lip::after {\n  transform: rotate(135deg);\n  left: 36px;\n}\n\n/* \u7259\u9F7F */\n\n.tooth,\n.toothLeft,\n.toothRight {\n  position: absolute;\n}\n\n.toothLeft,\n.toothRight {\n  width: 72px;\n  height: 80px;\n  background-color: #fff;\n  border: 5px solid #000;\n  top: 94px;\n}\n\n.toothLeft {\n  left: 138px;\n  transform: rotate(6deg);\n}\n\n.toothRight {\n  left: 240px;\n  transform: rotate(-10deg);\n}\n\n/* \u8138\u988A */\n.faceContainer {\n  top: 50px;\n  left: 50%;\n}\n\n.face {\n  width: 94px;\n  height: 94px;\n  border: 5px solid rgb(215 60 18);\n  background-color: #fddb21;\n  border-radius: 100%;\n  border-bottom: 5px solid transparent;\n  position: absolute;\n}\n\n.faceLeft {\n  left: -200px;\n  transform: rotate(10deg);\n}\n\n.faceRight {\n  left: 100px;\n  transform: rotate(-10deg);\n}\n\n.freckle,\n.freckle::before,\n.freckle::after {\n  width: 10px;\n  height: 10px;\n  border: 5px solid rgb(215 60 18);\n  border-radius: 100%;\n  position: absolute;\n}\n\n.freckle {\n  top: 15px;\n  left: 45%;\n}\n\n.freckle::before {\n  top: 8px;\n  left: -30px;\n}\n\n.freckle::after {\n  top: 8px;\n  left: 25px;\n}\n\n/* \u4E0B\u5DF4 */\n.chinContainer {\n  top: 280px;\n  left: 50%;\n}\n\n.chin,\n.chin::before {\n  border: 5px solid transparent;\n  border-bottom-color: rgb(215 60 18);\n  border-radius: 0 0 50% 50%;\n  position: absolute;\n}\n\n.chin {\n  width: 130px;\n  height: 100px;\n  top: -50px;\n  left: -14px;\n}\n\n.chin::before {\n  width: 100px;\n  height: 80px;\n  top: 10px;\n  left: -72px;\n}\n/* \u8EAB\u4F53 */\n.BobBody {\n  background-color: #fff;\n  position: absolute;\n}\n",
+  style: "\nbody {\n  background-color: #fddb21;\n}\n\n.BobContainer,\n.eyeContainer,\n.noseContainer,\n.mouthContainer,\n.faceContainer,\n.chinContainer {\n  position: relative;\n}\n\n/* \u5934\u90E8 */\n.BobHead {\n}\n\n/* \u773C\u775B\u90E8\u5206 */\n\n.eyeContainer {\n  top: 60px;\n  left: 50%;\n}\n\n.eye {\n  width: 200px;\n  height: 200px;\n  border: 5px solid #000;\n  background-color: #fff;\n  border-radius: 50%;\n  position: absolute;\n}\n\n.eyeLeft {\n  margin-left: -200px;\n}\n\n.eye::before,\n.eye::after {\n  border-radius: 50%;\n  position: relative;\n}\n\n.eye::before {\n  width: 60px;\n  height: 60px;\n  border: 5px solid #000;\n  background-color: #09f;\n  top: 60px;\n  left: 60px;\n}\n\n.eye::after {\n  width: 20px;\n  height: 20px;\n  border: 5px solid #000;\n  background-color: #000;\n  top: 20px;\n  left: 80px;\n}\n\n/* \u776B\u6BDB */\n.eyeBrow,\n.eyeBrow::before,\n.eyeBrow::after {\n  width: 16px;\n  height: 60px;\n  background-color: #000;\n  position: absolute;\n}\n\n.eyeBrow {\n  top: -60px;\n  left: 80px;\n}\n\n.eyeBrow::before {\n  transform: rotate(-45deg);\n  top: 30px;\n  left: -80px;\n}\n\n.eyeBrow::after {\n  transform: rotate(40deg);\n  top: 18px;\n  left: 72px;\n}\n\n/* \u9F3B\u5B50\u90E8\u5206 */\n.noseContainer {\n  top: 180px;\n  left: 50%;\n  z-index: 9999;\n}\n\n.nose {\n  width: 120px;\n  height: 160px;\n  border: 5px solid transparent;\n  border-color: #000 #000 transparent #000;\n  background-color: #fddb21;\n  margin-left: -60px;\n  border-radius: 70%;\n}\n\n/* \u5634\u5DF4\u90E8\u5206 */\n\n.mouthContainer {\n  top: 90px;\n  left: 50%;\n  margin-left: -220px;\n  z-index: 9998;\n}\n\n/* \u5634\u5507 */\n\n.lip {\n  width: 440px;\n  height: 280px;\n  border: 5px solid transparent;\n  border-bottom: 5px solid #000;\n  border-radius: 100%;\n  position: absolute;\n  top: -180px;\n}\n\n.lip::before,\n.lip::after {\n  width: 30px;\n  height: 20px;\n  border: 5px solid transparent;\n  border-bottom: 5px solid #000;\n  position: absolute;\n  top: 220px;\n}\n\n.lip::before {\n  transform: rotate(-135deg);\n  right: 36px;\n}\n\n.lip::after {\n  transform: rotate(135deg);\n  left: 36px;\n}\n\n/* \u7259\u9F7F */\n\n.tooth,\n.toothLeft,\n.toothRight {\n  position: absolute;\n}\n\n.toothLeft,\n.toothRight {\n  width: 72px;\n  height: 80px;\n  background-color: #fff;\n  border: 5px solid #000;\n  top: 94px;\n}\n\n.toothLeft {\n  left: 138px;\n  transform: rotate(6deg);\n}\n\n.toothRight {\n  left: 240px;\n  transform: rotate(-10deg);\n}\n\n/* \u8138\u988A */\n.faceContainer {\n  top: 50px;\n  left: 50%;\n}\n\n.face {\n  width: 94px;\n  height: 94px;\n  border: 5px solid rgb(215 60 18);\n  background-color: #fddb21;\n  border-radius: 100%;\n  border-bottom: 5px solid transparent;\n  position: absolute;\n}\n\n.faceLeft {\n  left: -200px;\n  transform: rotate(10deg);\n}\n\n.faceRight {\n  left: 100px;\n  transform: rotate(-10deg);\n}\n\n.freckle,\n.freckle::before,\n.freckle::after {\n  width: 10px;\n  height: 10px;\n  border: 5px solid rgb(215 60 18);\n  border-radius: 100%;\n  position: absolute;\n}\n\n.freckle {\n  top: 15px;\n  left: 45%;\n}\n\n.freckle::before {\n  top: 8px;\n  left: -30px;\n}\n\n.freckle::after {\n  top: 8px;\n  left: 25px;\n}\n\n/* \u4E0B\u5DF4 */\n.chinContainer {\n  top: 280px;\n  left: 50%;\n}\n\n.chin,\n.chin::before {\n  border: 5px solid transparent;\n  border-bottom-color: rgb(215 60 18);\n  border-radius: 0 0 50% 50%;\n  position: absolute;\n}\n\n.chin {\n  width: 130px;\n  height: 100px;\n  top: -50px;\n  left: -14px;\n}\n\n.chin::before {\n  width: 100px;\n  height: 80px;\n  top: 10px;\n  left: -72px;\n}\n/* \u8EAB\u4F53 */\n.BobBody {\n  background-color: #fff;\n  position: absolute;\n}\n",
   wave: "\n.nose {\n  transform-origin: center bottom;\n  animation: wave 300ms infinite linear;\n}\n\n@keyframes wave {\n  0% {\n    transform: rotate(0deg);\n  }\n  33% {\n    transform: rotate(5deg);\n  }\n  66% {\n    transform: rotate(-5deg);\n  }\n  100% {\n    transform: rotate(0deg);\n  }\n}",
   wink: "\n.eye {\n  animation: wink forwards infinite 6s ease-in-out;\n  \n}\n@keyframes wink {\n  0%, 2%, 60%, 62%, 100% { \n           transform: scaleX(1) scaleY(1); \n  } \n  1%, 61% { \n           transform: scaleX(1.5) scaleY(0.1); \n  } \n}\n"
 };
@@ -138,15 +138,54 @@ var _css = _interopRequireDefault(require("./css.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var style = document.querySelector(".style");
-var BobStyle = document.querySelector(".BobStyle");
-var n = 0;
-setInterval(function () {
+var n = 1;
+style.innerText = _css.default.style.substr(0, n);
+BobStyle.innerHTML = _css.default.style.substr(0, n);
+var time = 100;
+
+var run = function run() {
   n += 1;
+  console.log(n);
+
+  if (n > _css.default.style.length) {
+    window.clearInterval(id);
+    return;
+  }
+
   style.innerText = _css.default.style.substr(0, n);
   style.scrollTop = style.scrollHeight;
   BobStyle.innerHTML = _css.default.style.substr(0, n);
-}, 10);
+};
+
+var id = setInterval(function () {
+  run();
+}, time);
+
+btnPause.onclick = function () {
+  window.clearInterval(id);
+};
+
+btnPlay.onclick = function () {
+  id = setInterval(function () {
+    run();
+  }, time);
+};
+
+btnFast.onclick = function () {
+  window.clearInterval(id);
+  time = 10;
+  id = setInterval(function () {
+    run();
+  }, time);
+};
+
+btnNormal.onclick = function () {
+  window.clearInterval(id);
+  time = 100;
+  id = setInterval(function () {
+    run();
+  }, time);
+};
 },{"./css.js":"css.js"}],"C:/Users/xcl82/AppData/Local/Yarn/Data/global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -175,7 +214,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64752" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60604" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

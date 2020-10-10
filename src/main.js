@@ -1,13 +1,47 @@
 import BobStyleStr from "./css.js";
 
-const style = document.querySelector(".style");
+let n = 1;
 
-const BobStyle = document.querySelector(".BobStyle");
+style.innerText = BobStyleStr.style.substr(0, n);
+BobStyle.innerHTML = BobStyleStr.style.substr(0, n);
 
-let n = 0;
-setInterval(() => {
+let time = 100;
+
+const run = () => {
   n += 1;
+  console.log(n);
+  if (n > BobStyleStr.style.length) {
+    window.clearInterval(id);
+    return;
+  }
   style.innerText = BobStyleStr.style.substr(0, n);
   style.scrollTop = style.scrollHeight;
   BobStyle.innerHTML = BobStyleStr.style.substr(0, n);
-}, 10);
+};
+
+let id = setInterval(() => {
+  run();
+}, time);
+
+btnPause.onclick = () => {
+  window.clearInterval(id);
+};
+btnPlay.onclick = () => {
+  id = setInterval(() => {
+    run();
+  }, time);
+};
+btnFast.onclick = () => {
+  window.clearInterval(id);
+  time = 10;
+  id = setInterval(() => {
+    run();
+  }, time);
+};
+btnNormal.onclick = () => {
+  window.clearInterval(id);
+  time = 100;
+  id = setInterval(() => {
+    run();
+  }, time);
+};

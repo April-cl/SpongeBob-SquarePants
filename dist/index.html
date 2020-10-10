@@ -6,19 +6,59 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SpongeBob SquarePants</title>
     <!-- <link rel="stylesheet" href="style.css" /> -->
-    <style>.style {
+    <style>* {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      *::before,
+      *::after {
+        display: block;
+        content: "";
+        box-sizing: border-box;
+      }
+
+      body {
+        position: relative;
+      }
+      #style {
         height: 50vh;
         background-color: #000;
         color: #fff;
         overflow-y: auto;
       }
+      #style::-webkit-scrollbar {
+        display: none;
+      }
+      #buttons {
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        margin-right: 10px;
+      }
+      #buttons > button {
+        margin-bottom: 10px;
+        padding: 4px 8px;
+      }
       .BobContainer {
         transform: scale(0.4);
       }</style>
-    <style class="BobStyle"></style>
+    <style id="BobStyle"></style>
   </head>
   <body>
-    <div class="style"></div>
+    <div id="style"></div>
+    <div id="buttons">
+      <button id="btnPause">暂停</button>
+      <button id="btnPlay">播放</button>
+      <button id="btnFast">急速</button>
+      <button id="btnNormal">常速</button>
+      <button id="btnWave">摇鼻子</button>
+      <button id="btnWink">眨眼睛</button>
+    </div>
     <div class="BobContainer">
       <div class="BobHead">
         <div class="eyeContainer">
