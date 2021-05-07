@@ -140,7 +140,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var player = {
   id: undefined,
-  time: 100,
+  time: 30,
   ui: {
     style: document.querySelector("#style"),
     BobStyle: document.querySelector("#BobStyle")
@@ -150,8 +150,7 @@ var player = {
     "#btnPlay": "play",
     "#btnFast": "fast",
     "#btnNormal": "normal",
-    "#btnWave": "wave",
-    "#btnWink": "wink"
+    "#btnWave": "wave"
   },
   n: 1,
   init: function init() {
@@ -188,16 +187,21 @@ var player = {
   },
   fast: function fast() {
     player.pause();
-    player.time = 10;
+    player.time = 3;
     player.play();
   },
   normal: function normal() {
     player.pause();
-    player.time = 100;
+    player.time = 30;
     player.play();
   },
-  wave: function wave() {},
-  wink: function wink() {}
+  wave: function wave() {
+    if (player.ui.style.innerText.toString().includes('/* 嘴巴部分 */')) {
+      document.querySelector(".nose").classList.toggle('wave');
+    } else {
+      window.alert('鼻子还没长出来呢！可以按【急速】按钮让鼻子快点长出来哦');
+    }
+  }
 };
 player.init();
 },{"./css.js":"css.js"}],"C:/Users/xcl82/AppData/Local/Yarn/Data/global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -228,7 +232,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63472" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50163" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

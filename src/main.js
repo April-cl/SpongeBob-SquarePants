@@ -2,7 +2,7 @@ import BobStyleStr from "./css.js";
 
 const player = {
   id: undefined,
-  time: 100,
+  time: 30,
   ui: {
     style: document.querySelector("#style"),
     BobStyle: document.querySelector("#BobStyle"),
@@ -13,7 +13,6 @@ const player = {
     "#btnFast": "fast",
     "#btnNormal": "normal",
     "#btnWave": "wave",
-    "#btnWink": "wink",
   },
   n: 1,
   init: () => {
@@ -49,16 +48,21 @@ const player = {
   },
   fast: () => {
     player.pause();
-    player.time = 10;
+    player.time = 3;
     player.play();
   },
   normal: () => {
     player.pause();
-    player.time = 100;
+    player.time = 30;
     player.play();
   },
-  wave: () => {},
-  wink: () => {},
+  wave: () => {
+    if (player.ui.style.innerText.toString().includes('/* 嘴巴部分 */')) {
+      document.querySelector(".nose").classList.toggle('wave')
+    } else {
+      window.alert('鼻子还没长出来呢！可以按【急速】按钮让鼻子快点长出来哦')
+    }
+  },
 };
 
 player.init();
